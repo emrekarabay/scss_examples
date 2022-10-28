@@ -1,0 +1,40 @@
+$primary: #F6F6C9;
+$secondary:#BAD1C2;
+$tertiary:#4FA095;
+$quaternary:#153462;
+
+@mixin font($style,$size,$weight,$color){
+    font-style: $style;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.a-default{
+    text-decoration: none;
+    padding: 3% 5%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.7rem;
+}
+.a-custom{
+    margin-left: 5%;
+    margin-top: 5%;
+    @extend .a-default;
+    border: 3px solid $secondary;
+    @include font(normal, 50px, 200, $tertiary);
+    background-color: $primary;
+    transition: all;
+    
+    &:hover{
+        background-color: $quaternary;
+        @include font(bold, 50px, 200, $primary);
+        border: 3px solid $quaternary;
+    }
+}
